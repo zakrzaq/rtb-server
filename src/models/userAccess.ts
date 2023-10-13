@@ -11,6 +11,10 @@ export const UserAccess = db.define(
       primaryKey: true,
     },
     userId: Sequelize.STRING,
+    elementSeen: {
+      type: Sequelize.BOOLEAN,
+      defaultValue: false,
+    },
   },
   {
     freezeTableName: true,
