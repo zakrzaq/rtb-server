@@ -25,8 +25,12 @@ app.use('/api/report', reportRouter);
 
 app.use(errorHandler);
 
-connectDb();
+try {
+  connectDb();
 
-app.listen(port, hostname, () => {
-  console.log(`Server running on http://${hostname}:${port}`);
-});
+  app.listen(port, hostname, () => {
+    console.log(`Server running on http://${hostname}:${port}`);
+  });
+} catch (err: unknown) {
+  console.log(err);
+}

@@ -17,5 +17,7 @@ export const db = new Sequelize(dbName, dbUser, dbPassword, {
 export const connectDb = () => {
   db.sync()
     .then(() => console.log('Database connected'))
-    .catch((err: unknown) => console.log(err));
+    .catch(() => {
+      throw new Error('Could not connect to database');
+    });
 };
