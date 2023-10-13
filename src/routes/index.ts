@@ -8,4 +8,3 @@ router.get('/', (_, res: Response) => {
 });
 
 export { router as rootRouter };
-

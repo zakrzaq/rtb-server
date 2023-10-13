@@ -4,7 +4,7 @@ import cors from 'cors';
 import errorHandler from './util/errorHandler';
 import { rootRouter } from './routes/index';
 import { userAccessRouter } from './routes/userAccess';
-import { reportRouter } from './routes/report'
+import { reportRouter } from './routes/report';
 import { connectDb } from './util/db';
 
 const port = process.env.PORT ? parseInt(process.env.PORT) : 3030;

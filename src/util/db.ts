@@ -4,8 +4,13 @@ const dbName = process.env.POSTGRES_DB || '';
 const dbUser = process.env.POSTGRES_USER || '';
 const dbPassword = process.env.POSTGRES_PASSWORD || '';
 
+const dbHost =
+  process.env.ENVIRONMENT === 'docker'
+    ? process.env.POSTGRES_HOST_DOCKER || 'postgres'
+    : process.env.POSTGRES_HOST_DEV || 'localhost';
+
 export const db = new Sequelize(dbName, dbUser, dbPassword, {
-  host: 'localhost',
+  host: dbHost,
   dialect: 'postgres',
 });
 
