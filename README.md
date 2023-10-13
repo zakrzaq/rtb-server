@@ -10,6 +10,8 @@ docker
 
 To be used as git submodule to [rtb-house](https://github.com/zakrzaq/rtb-house) in `./server` directory.
 
+Or for standalone use:
+
 1. .env
 
 - setup `.env` file. [example](#environment-variables)
